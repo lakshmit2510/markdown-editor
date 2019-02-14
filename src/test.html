@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="demo">
+
+            
+        </div>
+        <script src="./stackedit.min.js"></script>
+        <script>
+            var ele = document.getElementById('demo');
+            var stackEditObj = new Stackedit();
+            stackEditObj.openFile({
+				name: 'Filename',
+				content: {
+					text: ele.value
+                }});
+                stackEditObj.on('fileChange', (file) => {
+				ele.value = file.content.text;
+				console.log(file.content.text)
+			});
+			
+        </script>
+    </body>
+</html>
